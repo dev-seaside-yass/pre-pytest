@@ -34,3 +34,11 @@ mkdir -p .github/workflows
 [actions/checkout](https://github.com/actions/checkout)
 
 [actions/setup-python](https://github.com/actions/setup-python)
+
+## push
+```sh
+git add .
+git commit -m "ワークフロー作成"
+
+git push -u origin feature/add_test
+```
