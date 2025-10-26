@@ -1,0 +1,19 @@
+name: Run Pytest
+
+on:
+  pull_request: #プルリクエスト時に実行
+    brunches: [ "main" ] #ブランチを指定
+  jobs:
+    test:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v5
+        - name: Setup Python
+          uses: actions/setup-python@v6
+          with:
+            python-version: 3.13
+        - name: Install dependencies
+          run: pip install -r requirements.txt
+        - name: Run pytest
+          run: pytest
